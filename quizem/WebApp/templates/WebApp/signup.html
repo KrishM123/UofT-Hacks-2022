@@ -1,0 +1,33 @@
+{% extends "WebApp/template.html" %}
+
+{% block main %}
+
+<div class="card lCard text-white bg-dark mb-3" style="width: 18rem;">
+    <div class="card-body">
+        <div class="centered">
+            <h1 style="padding: 8px;">Sign Up</h1>
+        </div>
+        <div class="centered">
+            <form method='POST' enctype="multipart/form-data">
+                {% csrf_token %}
+                <div style="padding: 8px;">
+                    {{ signUpForm.name }}
+                </div>
+                <div style="padding: 8px;">
+                    {{ signUpForm.username}}
+                </div>
+                <div style="padding: 8px;">
+                    {{ signUpForm.password }}
+                </div>
+                <div style="padding: 8px;">
+                    {{ signUpForm.email }}
+                </div>
+                <div class="centered" style="padding: 8px;">
+                    <input type="submit">
+                </div>
+            </form>
+        <div>
+    </div>
+</div>
+
+{% endblock %}
